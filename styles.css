@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#course-list {
+  margin-top: 20px;
+}
+
+.year-section {
+  margin: 20px 0;
+}
+
+.course {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 15px;
+  width: 200px;
+}

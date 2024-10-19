@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="admin_login.css" >
+<script src="jquerry/jquerry.js"></script>
+<title>Admin Login</title>
+</head>
+<body>
+<div class="topmenu">
+          <div class="header">
+		  <h1><a href="">RGMCET</a></h1>
+		  </div>
+
+          <div class="menu">
+		        <ul>
+                   <li><a href="index.html">HOME</a></li>
+                   <li><a href="">LOGIN</a></li>
+                   <li><a href="https://www.rgmcet.edu.in//">ABOUT</a></li>
+                   <li><a href="https://www.rgmcet.edu.in//">CONTACT</a></li>
+                  
+               </ul>
+</div>
+</div>
+
+<div id="sidebar">
+
+
+
+				         <img id="admin_img" src="admin.png">
+                 <a id="logout" href="index.html"><img  id="logout_img" src="logout.png"></a>
+                         <ul id="sidebar_div">
+                         <h1>STUDENT</h1>
+                         <li><a href="student_reg.html" class ="def">STUDENT REG.</a></li>
+						             <li><a href="faculty_reg.html" class="non-def">FACULTY REG.</a></li>
+                         <li><a href="report_generation.html" id="repo_gen" class="non-def">REPORT GENERATION</a></li>
+                          <li><a href="php/final_eval.php" class="non-def">FINAL EVALUTION</a></li>
+
+                 </ul>
+				 <div class="sidebar_btn">
+
+                        <span></span>
+						<span></span>
+						<span></span>
+
+
+                  </div>
+
+</div>
+
+<div class="container" align="center">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Add your login logic here
+    console.log('Username:', username);
+    console.log('Password:', password);
+});
+
+$(document).ready(function(){
+$('.sidebar_btn').click(function (){
+$('#sidebar').toggleClass('hide');
+});
+
+$('#root').click(function () {
+
+  $('#root').css('color','red');
+
+});
+
+});
+
+$(document).ready(function (){
+
+$('#container').load('student_reg.html');
+
+
+});
+
+
+$('#sidebar_div a').click(function(){
+
+var page = $(this).attr('href');
+$('#container').load(page);
+
+return false;
+
+});
+
+
+
+
+</script>
+
+</body>
+</html>

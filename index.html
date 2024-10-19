@@ -1,0 +1,154 @@
+<html>
+<head>
+<title>Home Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel ="stylesheet" type="text/css" href="index.css" >
+<script src="jquerry.js">
+    </script>
+    
+<script>      
+$("document").ready(function () {       
+
+$(" .inner-container3  #submit3").on( "click" ,function() { 
+     
+    var usrname = $("div.inner-container3 #inp1").val().toLowerCase().trim();
+    var pass = $("div.inner-container3 #inp2").val().toLowerCase().trim();
+    
+    if (((usrname == "admin1") && (pass == "pass1")) || ((usrname == "admin2") && (pass == "pass2")) || ((usrname == "admin3") && (pass == "pass3")) )
+    
+    {
+        window.location = 'admin_login.html';
+            return false;
+    }
+    
+else 
+    
+    alert("PASSWORD AND USERNAME NOT REGISTERED");
+    
+    
+});      
+    });    
+</script>
+</head>
+<body>
+<div id = "banner"></div>
+<div class ="menu">
+             <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="">LOGIN</a></li>
+          <li><a href="https://www.rgmcet.edu.in/"></li>
+          <li><a href="https://www.rgmcet.edu.in/admission-help-line/">CONTACT</a></li>
+             </ul>
+</div>
+<div class ="container">
+<h3 id ="head1"><a href= "" class="anchor">STUDENT'S LOGIN</a></h3>
+<h3 id ="head2"><a href="" class ="anchor">ADMIN'S LOGIN</a></h3>
+<h3 id ="head3"><a href ="" class ="anchor">FACULTY'S LOGIN</a></h3>
+<div class ="inner-container1">
+ <img  src ="student.png" >
+               <form action="student_login.php" target ="" method ="POST">
+               <input type = "text" id="inp1"  name="username" placeholder="Enter Username" maxlength="25"><br>
+               <input type = "password" id="inp2" name="password" placeholder="Enter Password" maxlength="12"><br>
+               <input type="submit" id="submit1" value="LOGIN"><br>
+               <a href="">Forgot your Password ?</a>
+               </form>
+			   </div>
+ <div class ="inner-container2">
+ <img  src ="faculty1.png" >
+               <form action="faculty_login.php" target ="" method="POST">
+               <input type = "text" id="inp1"  name="fac_usr" placeholder="Enter Username" maxlength="25"><br>
+               <input type = "password" id="inp2"   name="fac_pass" placeholder="Enter Password" maxlength="12"><br>
+               <input type="submit" id="submit2" value="LOGIN"><br>
+               <a href="">Forgot your Password ?</a>
+               </form>
+ </div>
+ <div class ="inner-container3">
+ <img  src ="admin.png" >
+               <form action="faculty_login.php" target ="" method ="POST">
+               <input type = "text" id="inp1"   placeholder="Enter Username" maxlength="25"><br>
+               <input type = "password" id="inp2"   placeholder="Enter Password" maxlength="12"><br>
+               <input type="submit" id="submit3" value="LOGIN"><br>
+               <a href="">Forgot your Password ?</a>
+               </form>
+ </div>
+
+</div>
+
+
+<div id ="artboard">
+     <h3>INVOLVED FALCULTY</h3>
+    <div id ="board1" class ="board">
+	 <img src="cse_depart.jpg"><br>
+     <h4>CSE DEPARTMENT</h4><br>
+      <p>The Department of Computer Science and Engineering <a href="https://www.rgmcet.edu.in/department-computer-science-and-engineering/">read more...</a>
+	  </p><br>
+      <button  class ="board_btn">VISIT US</button> 
+    </div>
+	
+	<div id ="board2" class ="board">
+	 <img src="me_depart.jpg"><br>
+     <h4>MECHANICAL DEPART.</h4><br>
+      <p>The Department of Mechanical at RGM is <a href="https://www.rgmcet.edu.in/dept-of-mechanical-engineering/">read more...</a>
+	  </p><br>
+      <button  class ="board_btn">VISIT US</button> 
+    </div>
+	
+	
+	<div id ="board3" class ="board">
+	 <img src="civil_depart.jpg"><br>
+     <h4>CIVIL DEPART.</h4><br>
+      <p>The Department of Civil at RGM is <a href="https://www.rgmcet.edu.in/civil-engineering/">read more...</a>
+	  </p><br>
+      <button  class ="board_btn">VISIT US</button> 
+    </div>
+	
+	
+	<div id ="board4" class ="board">
+	 <img src="ece_depart.png"><br>
+     <h4>ECE DEPARTMENT</h4><br>
+      <p>The Department of Electronics at RGMis <a href="https://engineering.rgmcet.ac.in/electronics-comm-engg-dept-electronics-and-communication-engg/">read more...</a>
+	  </p>
+	  <br>
+      <button  class ="board_btn">VISIT US</button> 
+    </div>
+</div>
+
+
+<div class="slide_cont">
+            <div class="slider">
+                      <img class="imgsl" id="sl1"src="slide1.jpg">
+                      <img class="imgsl" id="sl2"src="slide2.jpg">
+                      <img class="imgsl"  id="sl3"src="slide3.jpg">
+            </div>
+			<div class="inner_cont" id="inner1">
+			          <img src="help.jpg">
+					 <b> <p>Rajeev Gandhi Memorial College
+                          Neravada, Hyderabad Road, Nandyal 518501<br>
+                          Phone :- +91 XXXXXXXXXX<br>
+                          Email :- XXX@rgmcet.edu.in</p></b>
+			</div>
+			
+			
+
+
+
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("imgsl");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2500);    
+}
+</script>
+
+</body>
+</html>

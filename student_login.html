@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="student_login.css" >
+<script src="jquerry.js"></script>
+<title>Student Login</title>
+</head>
+<body>
+<div class="topmenu">
+          <div class="header">
+		  <h1><a href="">RGMCET</a></h1>
+		  </div>
+
+          <div class="menu">
+		        <ul>
+                   <li><a href="index.html">HOME</a></li>
+                   <li><a href="">LOGIN</a></li>
+                   <li><a href="https://www.rgmcet.edu.in//">ABOUT</a></li>
+                   <li><a href="https://www.rgmcet.edu.in//">CONTACT</a></li>
+               </ul>
+			   </div>
+</div>
+
+<div id="sidebar">
+
+
+
+				         <img id="stu_img" src="student.png">
+                 <a href="index.html" id="logout"><img src="logout.png" id="logout_img"></a>
+                 <ul id="sidebar_div">
+                         <h1>STUDENT</h1>
+                         <li><a href="student_feedback.php" class ="def">FEEDBACK</a></li>
+						 <li><a href="suggestions.html" class="non-def">SUGGESTIONS</a></li>
+
+
+
+                 </ul>
+				 <div class="sidebar_btn">
+
+                        <span></span>
+						<span></span>
+						<span></span>
+
+
+                  </div>
+
+</div>
+<div class="container" align="center">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username" >Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password" >Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Add your login logic here
+    console.log('Username:', username);
+    console.log('Password:', password);
+});
+
+$(document).ready(function(){
+$('.sidebar_btn').click(function (){
+$('#sidebar').toggleClass('hide');
+});
+
+});
+
+$(document).ready(function (){
+
+$('#container').load('student_feedback.php');
+
+
+});
+
+
+$('#sidebar_div a').click(function(){
+
+var page = $(this).attr('href');
+$('#container').load(page);
+
+return false;
+
+});
+
+
+
+
+</script>
+
+</body>
+</html>
